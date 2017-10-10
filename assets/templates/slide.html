@@ -3,8 +3,9 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="revealjs/css/reveal.css">
+    <link rel="stylesheet" href="revealjs/lib/css/font-awesome.min.css">
+    <link rel="stylesheet" href="revealjs/lib/css/vs.css">
     <link rel="stylesheet" {{if .OriginalTheme}} href="{{.Theme}}" {{else}} href="revealjs/css/theme/{{.Theme}}" {{end}} id="theme">
-    <link rel="stylesheet" href="revealjs/lib/css/zenburn.css">
     <!-- If the query includes 'print-pdf', use the PDF print sheet -->
     <script>
       document.write( '<link rel="stylesheet" href="revealjs/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
@@ -37,7 +38,7 @@
         controls: true,
         progress: true,
         history: true,
-        center: true,
+        center: false,
         theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
         transition: Reveal.getQueryHash().transition || '{{.Transition}}', // default/cube/page/concave/zoom/linear/fade/none
         // Optional libraries used to extend on reveal.js

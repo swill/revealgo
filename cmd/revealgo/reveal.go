@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/yusukebe/revealgo"
+	"github.com/swill/revealgo"
 )
 
 func main() {

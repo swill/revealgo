@@ -90,6 +90,36 @@ $ curl http://localhost:3000/ > slide.html
 
 Edit `slide.html`, and then open `http://localhost:3000/slide.html` with your browser. A slide with the modified configurations will come up.
 
+## Contributing
+
+### Building
+
+**Install BinData**
+```
+$ go get -u github.com/jteeuwen/go-bindata/...
+```
+
+**Get the `revealgo` Source**
+```
+$ go get github.com/swill/revealgo
+```
+
+**Get the `reveal.js` Source**
+```
+$ cd /path/to/revealgo
+$ git clone git@github.com:hakimel/reveal.js.git assets/revealjs
+```
+
+**Generate the BinData**
+```
+$ go-bindata -pkg revealgo -o assets.go assets/revealjs/lib/... assets/revealjs/plugin/... assets/revealjs/css/... assets/revealjs/js/... assets/templates/...
+```
+
+**Install `revealgo` Binary**
+```
+$ cd cmd/revealgo/ && go install && cd ../..
+```
+
 ## See Also
 
 * reveal.js <https://github.com/hakimel/reveal.js/>
