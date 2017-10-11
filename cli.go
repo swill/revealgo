@@ -13,9 +13,10 @@ type CLI struct {
 }
 
 type CLIOptions struct {
-	Port       int    `short:"p" long:"port" description:"tcp port number of this server. default is 3000."`
-	Theme      string `long:"theme" description:"slide theme or original css file name. default themes: beige, black, blood, league, moon, night, serif, simple, sky, solarized, and white" default:"cloudops.css"`
-	Transition string `long:"transition" description:"transition effect for slides: default, cube, page, concave, zoom, linear, fade, none" default:"linear"`
+	Port        int    `short:"p" long:"port" description:"tcp port number of this server. default is 3000."`
+	Theme       string `long:"theme" description:"slide theme or original css file name. default themes: beige, black, blood, league, moon, night, serif, simple, sky, solarized, and white" default:"cloudops.css"`
+	Transition  string `long:"transition" description:"transition effect for slides: default, cube, page, concave, zoom, linear, fade, none" default:"linear"`
+	VersionFlag bool   `long:"version" description:"the current version of the revealgo binary" default:"false"`
 }
 
 func (cli *CLI) Run() {
@@ -24,6 +25,12 @@ func (cli *CLI) Run() {
 		fmt.Printf("error:%v\n", err)
 		os.Exit(1)
 	}
+
+	if opts.VersionFlag {
+		fmt.Println(Version)
+		os.Exit(0)
+	}
+
 	if len(args) < 1 {
 		showHelp()
 		os.Exit(0)
