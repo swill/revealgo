@@ -51,6 +51,22 @@
           { src: 'revealjs/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
         ]
       });
+      // automatically load the initial fragement on a slide if the fragment
+      // has been defined with the 'preload' class
+      Reveal.addEventListener('slidechanged', function(event) {
+        if (event.currentSlide.querySelectorAll('.preload[data-fragment-index="0"]').length > 0) {
+          Reveal.nextFragment();
+        }
+      });
+      // if the initial fragment on a slide has been defined with a 'preload' class
+      // then transition to the previous slide if the fragment is hidden
+      Reveal.addEventListener('fragmenthidden', function(event) {
+        if (event.fragment.hasAttribute('data-fragment-index') && event.fragment.classList.contains('preload')) {
+          if (event.fragment.attributes['data-fragment-index'].value == "0") {
+            Reveal.prev();
+          }
+        }
+      });
     </script>
   </body>
 </html>
