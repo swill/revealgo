@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <style type="text/css">
+        .login-wrapper {
+            margin:0 auto;
+            width:60%;
+            text-align:center;
+            margin-top:50px;
+            font-family: monospace;
+        }
+        .password-label,
+        .password-input {
+            display:block;
+        }
+        .password-input,
+        .password-submit {
+            -webkit-border-radius:5px;
+            -moz-border-radius:5px;
+            border-radius:5px;
+            border:1px solid #3d90c0;
+            font-size:150%;
+        }
+        .password-label {
+            margin-bottom:10px;
+            font-size:200%;
+        }
+        .password-input {
+            margin:0 auto;
+            padding:5px 10px;
+            margin-bottom:10px;
+        }
+        .password-submit {
+            padding:5px 15px;
+            background:#bbe2f9;
+            cursor: pointer;
+            font-family: monospace;
+        }
+        .password-submit:hover {
+            background:#62b5e5;
+        }
+        #error {
+            display:none;
+            color:red;
+            margin-top:-5px;
+            margin-bottom:10px;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="login-wrapper">
+        <form action="/login" method="post">
+            <label for="password" class="password-label">Password</label>
+            <input class="password-input" type="password" name="password" autofocus>
+            <div id="error"></div>
+            <input class="password-submit" type="submit" value="Submit">
+        </form>
+    </div>
+    <script>
+        Request = {
+            QueryParam : function(item){
+                var param = location.search.match(new RegExp("[\?\&]" + item + "=([^\&]*)(\&?)","i"));
+                return param ? param[1] : param;
+            }
+        }
+
+        if (Request.QueryParam("error") == "invalid_pass") {
+            document.getElementById("error").innerHTML = "Error: Invalid Password";
+            document.getElementById("error").style.display = "block";
+        }
+        if (Request.QueryParam("error") == "invalid_method") {
+            document.getElementById("error").innerHTML = "Error: Invalid HTTP Method";
+            document.getElementById("error").style.display = "block";
+        }
+    </script>
+  </body>
+</html>

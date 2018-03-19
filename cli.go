@@ -3,6 +3,7 @@ package revealgo
 import (
 	"fmt"
 	"os"
+	"path/filepath"
 	"reflect"
 	"strings"
 
@@ -13,17 +14,29 @@ type CLI struct {
 }
 
 type CLIOptions struct {
-	Port        int    `short:"p" long:"port" description:"tcp port number of this server. default is 3000."`
-	Theme       string `long:"theme" description:"slide theme or original css file name. default themes: beige, black, blood, league, moon, night, serif, simple, sky, solarized, and white" default:"cloudops.css"`
-	Transition  string `long:"transition" description:"transition effect for slides: default, cube, page, concave, zoom, linear, fade, none" default:"linear"`
-	VersionFlag bool   `long:"version" description:"the current version of the revealgo binary" default:"false"`
+	Port         int    `short:"p" long:"port" description:"tcp port number of this server. default is 3000."`
+	Theme        string `long:"theme" description:"slide theme or original css file name. default themes: beige, black, blood, league, moon, night, serif, simple, sky, solarized, and white" default:"cloudops.css"`
+	Transition   string `long:"transition" description:"transition effect for slides: default, cube, page, concave, zoom, linear, fade, none" default:"linear"`
+	CredsFile    string `long:"creds_file" description:"the google sheets credentials file. default is 'google-service-account.json'" default:"google-service-account.json"`
+	Spreadsheet  string `long:"spreadsheet" description:"the spreadsheet ID where the passwords are stored. example is '1-eV-Np3wbvsCLbHkufTZm_npZsSGhr9nB-MLzdp-nJU'" default:""`
+	Worksheet    string `long:"worksheet" description:"the 'worksheet' in the spreadsheet where the passwords are stored. example is 'docker-ws'" default:""`
+	PassColumn   string `long:"pass_col" description:"the 'password' column in the spreadsheet. default is 'A'" default:"A"`
+	ExpireColumn string `long:"expire_col" description:"the 'expires' column in the spreadsheet. default is 'B'" default:"B"`
+	VersionFlag  bool   `short:"v" long:"version" description:"the current version of the revealgo binary" default:"false"`
+	HelpFlag     bool   `short:"h" long:"help" description:"show this help screen" default:"false"`
 }
 
 func (cli *CLI) Run() {
 	opts, args, err := parseOptions()
+
 	if err != nil {
 		fmt.Printf("error:%v\n", err)
 		os.Exit(1)
+	}
+
+	if opts.HelpFlag {
+		showHelp()
+		os.Exit(0)
 	}
 
 	if opts.VersionFlag {
@@ -45,17 +58,26 @@ func (cli *CLI) Run() {
 	server := Server{
 		port: opts.Port,
 	}
+	paths := make([]Path, 0)
+	for i := range args {
+		paths = append(paths, Path{args[i], filepath.Dir(args[i])})
+	}
 	param := ServerParam{
-		Path:          args[0],
+		Paths:         paths,
 		Theme:         addExtention(opts.Theme, "css"),
 		Transition:    opts.Transition,
 		OriginalTheme: originalTheme,
+		CredsFile:     opts.CredsFile,
+		Spreadsheet:   opts.Spreadsheet,
+		Worksheet:     opts.Worksheet,
+		PassColumn:    opts.PassColumn,
+		ExpireColumn:  opts.ExpireColumn,
 	}
 	server.Serve(param)
 }
 
 func showHelp() {
-	fmt.Fprint(os.Stderr, `Usage: revealgo [options] [MARKDOWN FILE]
+	fmt.Fprint(os.Stderr, `Usage: revealgo [options] [markdown_file ...]
 
 Options:
 `)

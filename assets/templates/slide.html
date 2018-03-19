@@ -17,17 +17,15 @@
   <body>
     <div class="reveal">
       <div class="slides">
-        <section data-markdown="{{.Path}}"
-                 data-separator="^---"
-                 data-separator-vertical="^___"
-                 data-separator-notes="^Note:"
-                 data-charset="utf-8">
-          <script type="text/template">
-            ## Page title
-
-            A paragraph with some text and a [link](http://hakim.se).
-          </script>
-        </section>
+        {{range .Paths}}
+          <section data-markdown="{{.File}}"
+            data-separator="^---"
+            data-separator-vertical="^___"
+            data-separator-notes="^Note:"
+            data-charset="utf-8"
+            data-link-prefix="{{.Prefix}}">
+          </section>
+        {{end}}
       </div>
     </div>
     <script src="revealjs/lib/js/head.min.js"></script>
@@ -64,6 +62,24 @@
         if (event.fragment.hasAttribute('data-fragment-index') && event.fragment.classList.contains('preload')) {
           if (event.fragment.attributes['data-fragment-index'].value == "0") {
             Reveal.prev();
+          }
+        }
+      });
+      // when the markdown data is loaded, rewrite the image paths to be relative to the presentation file.
+      window.addEventListener('load', function(event) {
+        sections = document.querySelectorAll('section');
+        for (i=0; i<sections.length; i++) {
+          if (sections[i].getAttribute('data-link-prefix') != null) {
+            prefix = sections[i].getAttribute('data-link-prefix');
+            images = sections[i].querySelectorAll('img');
+            for (j=0; j<images.length; j++) {
+              img_src = images[j].getAttribute('src');
+              // make sure the image 'src' starts with './'
+              if (img_src != '' && img_src.lastIndexOf('./', 0) === 0) {
+                // update the image path to include the prefix
+                images[j].setAttribute('src', img_src.replace('./', prefix+'/'));
+              }
+            }
           }
         }
       });
