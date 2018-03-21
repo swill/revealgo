@@ -6,15 +6,25 @@
     <link rel="stylesheet" href="revealjs/lib/css/font-awesome.min.css">
     <link rel="stylesheet" href="revealjs/lib/css/vs.css">
     <link rel="stylesheet" {{if .OriginalTheme}} href="{{.Theme}}" {{else}} href="revealjs/css/theme/{{.Theme}}" {{end}} id="theme">
+    {{if .DisablePrint}}
+    <style type="text/css" media="print">
+      body {
+        display:none;
+        visibility:hidden;
+      }
+    </style>
+    {{else}}
     <!-- If the query includes 'print-pdf', use the PDF print sheet -->
     <script>
       document.write( '<link rel="stylesheet" href="revealjs/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
     </script>
+    {{end}}
+
     <!--[if lt IE 9]>
       <script src="revealjs/lib/js/html5shiv.js"></script>
     <![endif]-->
   </head>
-  <body>
+  <body{{if .Watermark}} class="watermark"{{end}}>
     <div class="reveal">
       <div class="slides">
         {{range .Paths}}

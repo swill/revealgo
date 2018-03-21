@@ -41,6 +41,8 @@ type ServerParam struct {
 	Theme         string
 	OriginalTheme bool
 	Transition    string
+	Watermark     bool
+	DisablePrint  bool
 	CredsFile     string
 	Spreadsheet   string
 	Worksheet     string
