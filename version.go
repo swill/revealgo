@@ -1,3 +1,3 @@
 package revealgo
 
-const Version = "1.11"
+const Version = "1.12"

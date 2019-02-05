@@ -36,6 +36,14 @@
             data-link-prefix="{{.Prefix}}">
           </section>
         {{end}}
+        {{if .Watermark}}
+        <section>
+					<h2>Property of CloudOps</h2>
+					<p>
+						Confidential information and property of CloudOps Inc. No part of these materials may be copied, used or disclosed except with written permission of CloudOps.
+					</p>
+        </section>
+        {{end}}
       </div>
     </div>
     <script src="revealjs/lib/js/head.min.js"></script>
