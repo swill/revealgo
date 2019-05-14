@@ -1860,7 +1860,7 @@ func assetsRevealjsCssRevealCss() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "assets/revealjs/css/reveal.css", size: 42581, mode: os.FileMode(436), modTime: time.Unix(1556892693, 0)}
+	info := bindataFileInfo{name: "assets/revealjs/css/reveal.css", size: 42581, mode: os.FileMode(436), modTime: time.Unix(1557846292, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -1920,7 +1920,7 @@ func assetsRevealjsCssThemeBeigeCss() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "assets/revealjs/css/theme/beige.css", size: 6981, mode: os.FileMode(436), modTime: time.Unix(1556892693, 0)}
+	info := bindataFileInfo{name: "assets/revealjs/css/theme/beige.css", size: 6981, mode: os.FileMode(436), modTime: time.Unix(1557846292, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -1940,7 +1940,7 @@ func assetsRevealjsCssThemeBlackCss() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "assets/revealjs/css/theme/black.css", size: 6363, mode: os.FileMode(436), modTime: time.Unix(1556892693, 0)}
+	info := bindataFileInfo{name: "assets/revealjs/css/theme/black.css", size: 6363, mode: os.FileMode(436), modTime: time.Unix(1557846292, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -1960,7 +1960,7 @@ func assetsRevealjsCssThemeBloodCss() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "assets/revealjs/css/theme/blood.css", size: 6810, mode: os.FileMode(436), modTime: time.Unix(1556892693, 0)}
+	info := bindataFileInfo{name: "assets/revealjs/css/theme/blood.css", size: 6810, mode: os.FileMode(436), modTime: time.Unix(1557846292, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -1980,7 +1980,7 @@ func assetsRevealjsCssThemeCloudopsCss() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "assets/revealjs/css/theme/cloudops.css", size: 10650, mode: os.FileMode(436), modTime: time.Unix(1556892693, 0)}
+	info := bindataFileInfo{name: "assets/revealjs/css/theme/cloudops.css", size: 10650, mode: os.FileMode(436), modTime: time.Unix(1557846292, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -2040,7 +2040,7 @@ func assetsRevealjsCssThemeLeagueCss() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "assets/revealjs/css/theme/league.css", size: 7034, mode: os.FileMode(436), modTime: time.Unix(1556892693, 0)}
+	info := bindataFileInfo{name: "assets/revealjs/css/theme/league.css", size: 7034, mode: os.FileMode(436), modTime: time.Unix(1557846292, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -2060,7 +2060,7 @@ func assetsRevealjsCssThemeMoonCss() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "assets/revealjs/css/theme/moon.css", size: 6252, mode: os.FileMode(436), modTime: time.Unix(1556892693, 0)}
+	info := bindataFileInfo{name: "assets/revealjs/css/theme/moon.css", size: 6252, mode: os.FileMode(436), modTime: time.Unix(1557846292, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -2080,7 +2080,7 @@ func assetsRevealjsCssThemeNightCss() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "assets/revealjs/css/theme/night.css", size: 6167, mode: os.FileMode(436), modTime: time.Unix(1556892693, 0)}
+	info := bindataFileInfo{name: "assets/revealjs/css/theme/night.css", size: 6167, mode: os.FileMode(436), modTime: time.Unix(1557846292, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -2100,7 +2100,7 @@ func assetsRevealjsCssThemeSerifCss() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "assets/revealjs/css/theme/serif.css", size: 6241, mode: os.FileMode(436), modTime: time.Unix(1556892693, 0)}
+	info := bindataFileInfo{name: "assets/revealjs/css/theme/serif.css", size: 6241, mode: os.FileMode(436), modTime: time.Unix(1557846292, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -2120,7 +2120,7 @@ func assetsRevealjsCssThemeSimpleCss() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "assets/revealjs/css/theme/simple.css", size: 6626, mode: os.FileMode(436), modTime: time.Unix(1556892693, 0)}
+	info := bindataFileInfo{name: "assets/revealjs/css/theme/simple.css", size: 6626, mode: os.FileMode(436), modTime: time.Unix(1557846292, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -2140,7 +2140,7 @@ func assetsRevealjsCssThemeSkyCss() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "assets/revealjs/css/theme/sky.css", size: 6775, mode: os.FileMode(436), modTime: time.Unix(1556892693, 0)}
+	info := bindataFileInfo{name: "assets/revealjs/css/theme/sky.css", size: 6775, mode: os.FileMode(436), modTime: time.Unix(1557846292, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -2160,7 +2160,7 @@ func assetsRevealjsCssThemeSolarizedCss() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "assets/revealjs/css/theme/solarized.css", size: 6253, mode: os.FileMode(436), modTime: time.Unix(1556892693, 0)}
+	info := bindataFileInfo{name: "assets/revealjs/css/theme/solarized.css", size: 6253, mode: os.FileMode(436), modTime: time.Unix(1557846292, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -2480,7 +2480,7 @@ func assetsRevealjsCssThemeWhiteCss() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "assets/revealjs/css/theme/white.css", size: 6356, mode: os.FileMode(436), modTime: time.Unix(1556892693, 0)}
+	info := bindataFileInfo{name: "assets/revealjs/css/theme/white.css", size: 6356, mode: os.FileMode(436), modTime: time.Unix(1557846292, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
