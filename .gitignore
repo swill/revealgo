@@ -19,3 +19,4 @@ example.md
 cover.out
 original.css
 bin/
+.DS_Store
