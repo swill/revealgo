@@ -181,6 +181,7 @@ func (h *rootHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		log.Fatalf("error:%v", err)
 	}
+	path = filepath.FromSlash(path)
 	_, err = os.Stat(path)
 	if err == nil {
 		data, err := ioutil.ReadFile(path)
